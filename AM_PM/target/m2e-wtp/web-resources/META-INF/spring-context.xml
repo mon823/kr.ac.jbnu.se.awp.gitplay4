@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 중간 2줄 추가 -->
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+
+	<!-- 여기도 추가 -->
+	<bean id="ibatis" class="com.javapapers.spring.ioc.IBatisDao" />
+	<bean id="jdbc" class="com.javapapers.spring.ioc.JDBCDao" />
+	<bean id="pm" class="com.javapapers.spring.ioc.PersistentManager">
+		<property name="dao" ref="ibatis" />
+	</bean>
+
+
+
+</beans>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+	<bean id="logAop" class="kr.ac.jbnu.controller.LogAop"></bean>
+	<aop:config>
+		<aop:aspect id="logger" ref="logAop">
+			<aop:pointcut expression="within(kr.ac.jbnu.controller.*)"
+				id="publicMethod" />
+			<aop:around pointcut-ref="publicMethod" method="loggerAop" />
+		</aop:aspect>
+	</aop:config>
+	<bean id="student" class="kr.ac.jbnu.controller.Student">
+		<property name="name">
+			<value>hongku_student</value>
+		</property>
+		<property name="age">
+			<value>26</value>
+		</property>
+	</bean>
+	<bean id="worker" class="kr.ac.jbnu.controller.Worker">
+		<property name="name">
+			<value>hongku_worker</value>
+		</property>
+		<property name="age">
+			<value>36</value>
+		</property>
+		<property name="job">
+			<value>developer</value>
+		</property>
+	</bean>
+</beans>
+

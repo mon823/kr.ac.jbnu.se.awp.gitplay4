@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
-Built-By: SeokAmMoon
-Build-Jdk: 12.0.2
+Build-Jdk-Spec: 12
+Implementation-Title: AM_PM
+Implementation-Version: 1.0.0-BUILD-SNAPSHOT
 Created-By: Maven Integration for Eclipse
 
