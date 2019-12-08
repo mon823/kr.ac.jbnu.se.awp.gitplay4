@@ -22,9 +22,7 @@ public class App {
 		Member_ampm mem = new Member_ampm();
 		Noticeboard_type nt = new Noticeboard_type();
 		
-		nt.setBoard_type("1");
-		nt.setBoard_name("test");
-		createNotice_type(nt);
+	
 		mem.setEmail("mon823@naver.com");
 		mem.setGrad(Grad.valueOf("grade3"));
 		mem.setIs_super(IsSuper.valueOf("Y"));
@@ -39,7 +37,7 @@ public class App {
 		mem.setRegtime(new Timestamp(2019, 12, 07, 15, 05, 30, 0));
 		mem.setPass_change(new Timestamp(2019, 12, 07, 15, 05, 30, 0));
 		//10/13
-		//createMember(mem);
+		createMember(mem);
 		//deleteAll();
 		//mem.setUsername("test");
 		//updateMember(mem);
