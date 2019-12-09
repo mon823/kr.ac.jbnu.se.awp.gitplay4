@@ -25,7 +25,7 @@ public class Member_ampm {
 	private Integer idx;
 	
 	@Column(name = "userid")
-	private Integer userid;
+	private String userid;
 	
 	@Column(name = "email")
 	private String email;
@@ -35,7 +35,7 @@ public class Member_ampm {
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "status")
-	private Status status;
+	private STATUS status;
 	
 	@Column(name = "username")
 	private String username;
@@ -57,14 +57,14 @@ public class Member_ampm {
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "is_super")
-	private IsSuper is_super;
+	private ISSUPER is_super;
 	
 	@Column(name = "tel")
 	private String tel;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "grad")
-	private Grad grad;
+	private GRAD grad;
 	
 	public Integer getIdx() {
 		return idx;
@@ -72,10 +72,10 @@ public class Member_ampm {
 	public void setIdx(Integer idx) {
 		this.idx = idx;
 	}
-	public Integer getUserid() {
+	public String getUserid() {
 		return userid;
 	}
-	public void setUserid(Integer userid) {
+	public void setUserid(String userid) {
 		this.userid = userid;
 	}
 	public String getEmail() {
@@ -90,10 +90,10 @@ public class Member_ampm {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Status getStatus() {
+	public STATUS getStatus() {
 		return status;
 	}
-	public void setStatus(Status status) {
+	public void setStatus(STATUS status) {
 		this.status = status;
 	}
 	public String getUsername() {
@@ -132,10 +132,10 @@ public class Member_ampm {
 	public void setPass_change(Timestamp pass_change) {
 		this.pass_change = pass_change;
 	}
-	public IsSuper getIs_super() {
+	public ISSUPER getIs_super() {
 		return is_super;
 	}
-	public void setIs_super(IsSuper is_super) {
+	public void setIs_super(ISSUPER is_super) {
 		this.is_super = is_super;
 	}
 	public String getTel() {
@@ -146,10 +146,10 @@ public class Member_ampm {
 	}
 	
 	
-	public Grad getGrad() {
+	public GRAD getGrad() {
 		return grad;
 	}
-	public void setGrad(Grad grad) {
+	public void setGrad(GRAD grad) {
 		this.grad = grad;
 	}
 	

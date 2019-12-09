@@ -1,5 +1,5 @@
 package kr.ac.jbnu.model;
 
-public enum IsSuper {
+public enum ISSUPER {
 	Y,N
 }

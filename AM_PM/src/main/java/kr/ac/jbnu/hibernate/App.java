@@ -9,36 +9,50 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import kr.ac.jbnu.dao.MemberAmpmDao;
 import kr.ac.jbnu.model.Comment;
-import kr.ac.jbnu.model.Grad;
-import kr.ac.jbnu.model.IsSuper;
+import kr.ac.jbnu.model.GRAD;
+import kr.ac.jbnu.model.ISSUPER;
 import kr.ac.jbnu.model.Member_ampm;
 import kr.ac.jbnu.model.Noticeboard;
 import kr.ac.jbnu.model.Noticeboard_type;
-import kr.ac.jbnu.model.Status;
+import kr.ac.jbnu.model.STATUS;
 
 public class App {
 	public static void main(String[] args) {
 		Member_ampm mem = new Member_ampm();
-		Noticeboard_type nt = new Noticeboard_type();
 		
-	
 		mem.setEmail("mon823@naver.com");
-		mem.setGrad(Grad.valueOf("grade3"));
-		mem.setIs_super(IsSuper.valueOf("Y"));
+		mem.setGrad(GRAD.valueOf("grade3"));
+		mem.setIs_super(ISSUPER.valueOf("Y"));
 		mem.setTel("01028510657");
-		mem.setStatus(Status.valueOf("S"));
-		mem.setLogip("221159128205");
-		mem.setRegip("221159128205");
+		mem.setStatus(STATUS.valueOf("S"));
 		mem.setPassword("mon0607");
 		mem.setUsername("문석암");
-		mem.setUserid(201710565);
-		mem.setLogtime(new Timestamp(2019, 12, 07, 15, 05, 30, 0));
-		mem.setRegtime(new Timestamp(2019, 12, 07, 15, 05, 30, 0));
-		mem.setPass_change(new Timestamp(2019, 12, 07, 15, 05, 30, 0));
-		//10/13
-		createMember(mem);
-		//deleteAll();
+		mem.setUserid("201710565");
+		long retryDate = System.currentTimeMillis();
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		mem.setLogtime(timestamp);
+		mem.setRegtime(timestamp);
+		mem.setPass_change(timestamp);
+//		memberdao.deleteAll();
+//		memberdao.createMember(mem);
+//		System.out.println("[System.out]" +memberdao.readMember().get(0).getUsername());
+//		mem.setUsername("석암");
+//		memberdao.updateMember(mem);
+//		System.out.println("[System.out]" +memberdao.readMember().get(0).getUsername());
+//		
+		if(MemberAmpmDao.login("201710565", "mon067")) {
+			System.out.println("[System.out]" +"로그인 됨.");
+		}
+		else {
+			System.out.println("[System.out]" +"로그인 안됨.");
+		}
+		
+		//memberdao.deleteMember(30);
+		
+		
+		//
 		//mem.setUsername("test");
 		//updateMember(mem);
 		

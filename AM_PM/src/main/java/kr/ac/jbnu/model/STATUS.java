@@ -1,5 +1,5 @@
 package kr.ac.jbnu.model;
 
-public enum Status {
+public enum STATUS {
 	S,G,L,D,I
 }
